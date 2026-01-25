@@ -92,11 +92,9 @@
         <div class="controls">
             <select id="tierSelect" onchange="onTierChange()">
                 <option value="">-- Selecciona Tier --</option>
-                <option value="Tier 0">Tier 0</option>
-                <option value="Tier 1">Tier 1</option>
-                <option value="Tier 2">Tier 2</option>
-                <option value="Tier 3">Tier 3</option>
-                <option value="Inversor">Inversor</option>
+                <option value="Tier 1">Tier 1 (15 props)</option>
+                <option value="Tier 2">Tier 2 (12 props)</option>
+                <option value="Tier 3">Tier 3 (12 props)</option>
             </select>
 
             <select id="contactSelect" onchange="loadEmail()" disabled>
@@ -105,8 +103,8 @@
         </div>
 
         <div class="stats">
-            <span><strong>656</strong> contactos</span>
-            <span><strong>119</strong> propiedades</span>
+            <span><strong>653</strong> contactos</span>
+            <span><strong>17</strong> propiedades</span>
             <span>Semana <strong>03/2026</strong></span>
         </div>
     </nav>
@@ -119,31 +117,26 @@
 
     <script>
         const contactosPorTier = {
-            "Tier 0": [
-                {nombre: "Lara", agencia: "An pruebas n8n", archivo: "l_ciordia_at_atipikproperties_com.html", props: 1},
-                {nombre: "Guerson", agencia: "An pruebas n8n", archivo: "g_m_n_at_me_com.html", props: 1},
-                {nombre: "Ana Prueba", agencia: "An pruebas n8n", archivo: "anestradavig_at_gmail_com.html", props: 1}
-            ],
             "Tier 1": [
-                {nombre: "Sergio", agencia: "DIZA Consultores", archivo: "sergiolopezbravo_at_dizaconsultores_com.html", props: 103},
-                {nombre: "José Luis", agencia: "Engel & Völkers", archivo: "joseluis_diazdeneira_at_engelvoelkers_com.html", props: 103},
-                {nombre: "Esther", agencia: "Engel & Völkers", archivo: "esther_jimenez_at_engelvoelkers_com.html", props: 103},
-                {nombre: "Cristina", agencia: "Engel & Völkers", archivo: "cristina_rodriguez_at_engelvoelkers_com.html", props: 103},
-                {nombre: "Paloma", agencia: "Engel & Völkers", archivo: "paloma_castanon_at_engelvoelkers_com.html", props: 103}
+                {nombre: "Sergio", agencia: "DIZA Consultores", archivo: "sergiolopezbravo_at_dizaconsultores_com.html", props: 15},
+                {nombre: "José Luis", agencia: "Engel & Völkers", archivo: "joseluis_diazdeneira_at_engelvoelkers_com.html", props: 15},
+                {nombre: "Esther", agencia: "Engel & Völkers", archivo: "esther_jimenez_at_engelvoelkers_com.html", props: 15},
+                {nombre: "Cristina", agencia: "Engel & Völkers", archivo: "cristina_rodriguez_at_engelvoelkers_com.html", props: 15},
+                {nombre: "Paloma", agencia: "Engel & Völkers", archivo: "paloma_castanon_at_engelvoelkers_com.html", props: 15}
             ],
             "Tier 2": [
-                {nombre: "Barbara", agencia: "20 punto 20 Realty", archivo: "Barbaraperezverdier_at_gmail_com.html", props: 100},
-                {nombre: "Blanca", agencia: "A.P. de Propiedades", archivo: "apdepropiedades_at_gmail_com.html", props: 100},
-                {nombre: "Paula", agencia: "ACR Real Estate", archivo: "p_albamonte_at_acrrealestate_es.html", props: 100},
-                {nombre: "Pedro", agencia: "BELMAY", archivo: "info_at_belmay_es.html", props: 100},
-                {nombre: "Isabel", agencia: "Belton Real Estate", archivo: "isabel_at_belton_es.html", props: 100}
+                {nombre: "Barbara", agencia: "20 punto 20 Realty", archivo: "Barbaraperezverdier_at_gmail_com.html", props: 12},
+                {nombre: "Blanca", agencia: "A.P. de Propiedades", archivo: "apdepropiedades_at_gmail_com.html", props: 12},
+                {nombre: "Paula", agencia: "ACR Real Estate", archivo: "p_albamonte_at_acrrealestate_es.html", props: 12},
+                {nombre: "Pedro", agencia: "BELMAY", archivo: "info_at_belmay_es.html", props: 12},
+                {nombre: "Isabel", agencia: "Belton Real Estate", archivo: "isabel_at_belton_es.html", props: 12}
             ],
             "Tier 3": [
-                {nombre: "Paola Teresa", agencia: "A&E Inmobiliare", archivo: "paola_at_aeinmobiliere_com.html", props: 86},
-                {nombre: "Priscila", agencia: "A4L REAL ESTATE", archivo: "A4LAGENCIA_at_GMAIL_COM.html", props: 86},
-                {nombre: "Luciana", agencia: "ABITARE PLUS", archivo: "luci_at_abitareconnection_com.html", props: 86},
-                {nombre: "Joaquin", agencia: "ALFA REINA", archivo: "info_at_alfareina_com.html", props: 86},
-                {nombre: "Carolina", agencia: "Abra Homes", archivo: "carolinaartola_at_abrahomes_com.html", props: 86}
+                {nombre: "Paola Teresa", agencia: "A&E Inmobiliare", archivo: "paola_at_aeinmobiliere_com.html", props: 12},
+                {nombre: "Priscila", agencia: "A4L REAL ESTATE", archivo: "A4LAGENCIA_at_GMAIL_COM.html", props: 12},
+                {nombre: "Luciana", agencia: "ABITARE PLUS", archivo: "luci_at_abitareconnection_com.html", props: 12},
+                {nombre: "Joaquin", agencia: "ALFA REINA", archivo: "info_at_alfareina_com.html", props: 12},
+                {nombre: "Carolina", agencia: "Abra Homes", archivo: "carolinaartola_at_abrahomes_com.html", props: 12}
             ]
         };
 
