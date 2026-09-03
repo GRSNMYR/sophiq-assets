@@ -1,0 +1,267 @@
+<meta charset="utf-8">
+<title>Madrid Insight 2025/26 · Sophiq × Knight Frank</title>
+<style>
+  /* ============ Fuentes (Suisse Intl, embebidas desde el repo) ============ */
+  @font-face{font-family:'Suisse Intl';src:url('../fonts/SuisseIntl-Light.otf') format('opentype');font-weight:300;font-style:normal;}
+  @font-face{font-family:'Suisse Intl';src:url('../fonts/SuisseIntl-Regular.otf') format('opentype');font-weight:400;font-style:normal;}
+  @font-face{font-family:'Suisse Intl';src:url('../fonts/SuisseIntl-Medium.otf') format('opentype');font-weight:500;font-style:normal;}
+
+  /* ============ Tokens ============ */
+  :root{
+    --nero:#1A191E; --oro:#C19932; --crema:#F5F0EB; --grafito:#4A4A4A;
+    --bianco:#FAFAF8; --linea:rgba(26,25,30,0.12); --terciario:#8A8A8A;
+  }
+
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  body{ font-family:'Suisse Intl',Helvetica,Arial,sans-serif; color:var(--nero); font-weight:400; }
+
+  /* ============ Página A4 ============ */
+  .page{
+    position:relative; width:210mm; height:297mm; overflow:hidden;
+    background:var(--bianco); padding:24mm 20mm; page-break-after:always;
+  }
+  .page:last-child{ page-break-after:auto; }
+  .page.dark{ background:var(--nero); color:var(--bianco); }
+
+  /* ============ Header / Footer corridos ============ */
+  .runhead{ position:absolute; top:12mm; left:20mm; right:20mm;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:8pt; font-weight:500; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--grafito); padding-bottom:3mm; border-bottom:0.5px solid var(--linea); }
+  .runfoot{ position:absolute; bottom:12mm; left:20mm; right:20mm;
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-size:8pt; color:var(--grafito); font-variant-numeric:tabular-nums; }
+
+  /* ============ Tipografía ============ */
+  .eyebrow{ font-size:8pt; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--oro); }
+  h1{ font-weight:300; font-size:34pt; line-height:1.12; letter-spacing:-0.01em; }
+  h2{ font-weight:300; font-size:23pt; line-height:1.18; letter-spacing:-0.005em; margin-bottom:7mm; }
+  h3{ font-weight:500; font-size:14pt; line-height:1.25; }
+  p{ font-weight:400; font-size:10.5pt; line-height:1.5; color:var(--grafito); }
+  .lead{ font-size:12pt; line-height:1.55; color:var(--nero); }
+  .caption{ font-size:8pt; line-height:1.4; color:var(--terciario); letter-spacing:0.01em; }
+
+  /* ============ Portada ============ */
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; }
+  .cover-logo{ width:34mm; height:auto; }
+  .cover-body{ position:absolute; left:20mm; right:20mm; bottom:30mm; }
+  .cover-body h1{ margin:8mm 0 7mm 0; max-width:150mm; }
+  .cover-body .lead{ max-width:135mm; color:rgba(250,250,248,0.82); }
+  .cover-rule{ width:40mm; height:2px; background:var(--oro); margin:9mm 0; }
+  .cover-meta{ font-size:9pt; letter-spacing:0.06em; color:rgba(250,250,248,0.7); }
+
+  /* ============ Métricas hero ============ */
+  .metrics{ display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:6mm;
+    border-top:0.5px solid var(--linea); }
+  .metric{ padding:7mm 6mm 7mm 0; border-bottom:0.5px solid var(--linea); }
+  .metric:nth-child(odd){ border-right:0.5px solid var(--linea); padding-right:8mm; }
+  .metric:nth-child(even){ padding-left:8mm; }
+  .metric .fig{ font-weight:300; font-size:40pt; line-height:1; letter-spacing:-0.02em; color:var(--nero); }
+  .metric .fig .u{ font-size:20pt; color:var(--oro); }
+  .metric .lab{ font-size:9.5pt; line-height:1.4; color:var(--grafito); margin-top:3mm; }
+  .flag{ color:#B00020; font-weight:500; }
+
+  /* ============ Tesis (3 ideas) ============ */
+  .thesis{ display:grid; grid-template-columns:repeat(3,1fr); gap:8mm; margin-top:4mm; }
+  .idea .num{ font-size:9pt; font-weight:500; letter-spacing:0.1em; color:var(--oro); }
+  .idea h3{ margin:3mm 0; }
+  .idea .big{ font-weight:300; font-size:28pt; color:var(--nero); margin-top:4mm; }
+
+  /* ============ Tabla ============ */
+  table{ width:100%; border-collapse:collapse; margin-top:4mm; }
+  thead th{ font-weight:500; font-size:9pt; text-align:left; background:#F0EEEA;
+    padding:4mm 5mm; letter-spacing:0.04em; }
+  thead th.r{ text-align:right; }
+  tbody td{ font-size:10pt; padding:4mm 5mm; line-height:1.4; border-bottom:0.5px solid var(--linea); }
+  tbody td.r{ text-align:right; font-variant-numeric:tabular-nums; }
+  tbody td .em{ font-weight:500; color:var(--nero); }
+
+  /* ============ Cajas de dato ============ */
+  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:7mm; margin-top:5mm; }
+  .databox{ border-left:2px solid var(--oro); padding:1mm 0 1mm 6mm; }
+  .databox .k{ font-weight:300; font-size:22pt; color:var(--nero); line-height:1; }
+  .databox h3{ margin:3mm 0 2mm 0; }
+  .databox p{ font-size:9.5pt; }
+
+  /* ============ Bullets ============ */
+  ul{ list-style:none; margin-top:3mm; }
+  ul li{ font-size:10pt; line-height:1.6; color:var(--grafito); padding-left:7mm; position:relative; margin-bottom:1.5mm; }
+  ul li::before{ content:'\2013'; position:absolute; left:0; color:var(--oro); }
+
+  .section-intro{ max-width:150mm; margin-bottom:8mm; }
+  .spacer-sm{ height:6mm; } .spacer{ height:10mm; }
+  .note{ background:#F0EEEA; padding:6mm 7mm; margin-top:6mm; }
+  .note p{ font-size:9.5pt; }
+</style>
+
+<!-- ============================ PORTADA ============================ -->
+<div class="page dark">
+  <div class="cover-top">
+    <img class="cover-logo" src="https://grsnmyr.github.io/sophiq-assets/logos/oneline/sophiq-blanco.png" alt="Sophiq">
+    <div class="eyebrow" style="color:var(--oro)">Madrid Insight 2025/26</div>
+  </div>
+  <div class="cover-body">
+    <div class="eyebrow">Sophiq &times; Knight Frank · Market synthesis</div>
+    <h1>Prime Madrid is a question of confidence.</h1>
+    <p class="lead">Madrid is consolidating its position as Europe's fastest growing prime residential market: scarce supply, an increasingly international buyer and prices rising steadily, with little speculation behind them.</p>
+    <div class="cover-rule"></div>
+    <div class="cover-meta">June 2026 · Data: Knight Frank, Madrid Insight 2025/26</div>
+  </div>
+</div>
+
+<!-- ============================ P2 · LA TESIS ============================ -->
+<div class="page">
+  <div class="runhead"><span>Madrid Insight 2025/26</span><span>The thesis</span></div>
+  <div style="margin-top:14mm">
+    <div class="eyebrow">The numbers</div>
+    <h2 style="margin-top:4mm">Four figures that define the market</h2>
+    <div class="metrics">
+      <div class="metric"><div class="fig">+5.0<span class="u">%</span></div><div class="lab">Prime price growth in 2025 (+4.5% forecast for 2026).</div></div>
+      <div class="metric"><div class="fig">45<span class="u">%</span></div><div class="lab">Of prime purchases are already made by international buyers (30% in 2018).</div></div>
+      <div class="metric"><div class="fig">43<span class="u">%</span></div><div class="lab">Of Spain's UHNWIs are concentrated in Madrid (+10% forecast through 2027).</div></div>
+      <div class="metric"><div class="fig">#1</div><div class="lab">Fastest growing prime market in Europe, ahead of London and Paris.</div></div>
+    </div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="eyebrow">The thesis in three ideas</div>
+  <h2 style="margin-top:4mm">Limited supply, growing demand and an increasingly global buyer</h2>
+  <div class="thesis">
+    <div class="idea">
+      <div class="num">01</div>
+      <h3>Prices rising, and resilient</h3>
+      <p>Tenth consecutive year of growth, apart from the dip in 2020. The upward path that began after the pandemic holds.</p>
+    </div>
+    <div class="idea">
+      <div class="num">02</div>
+      <h3>Internationalised demand</h3>
+      <p>The foreign buyer gains weight year after year. Latin America leads (26%) and the&nbsp;US has multiplied since 2018.</p>
+    </div>
+    <div class="idea">
+      <div class="num">03</div>
+      <h3>Structurally limited supply</h3>
+      <p>Regulation and the city's urban character hold back new build. In Salamanca it fell by 20% against 2020.</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <p><span style="color:var(--nero);font-weight:500">On the Golden Visa.</span> The end of the Golden Visa and the tax noise around non-residents have had virtually no impact on Madrid's prime segment. Demand that is largely non-speculative and long in horizon underpins the stability of the market.</p>
+  </div>
+
+  <div class="runfoot"><span>Sophiq Properties</span><span>02 / 06</span></div>
+</div>
+
+<!-- ============================ P3 · PRECIO Y PODER ADQUISITIVO ============================ -->
+<div class="page">
+  <div class="runhead"><span>Madrid Insight 2025/26</span><span>Price</span></div>
+  <div style="margin-top:14mm">
+    <div class="eyebrow">Price evolution</div>
+    <h2 style="margin-top:4mm">Ten years of appreciation, with the upward path intact into 2026</h2>
+    <p class="section-intro">Madrid has strung together sustained prime price growth for a decade (2020 the only exception), a steadier and less speculative trajectory than that of other European capitals.</p>
+  </div>
+
+  <div class="eyebrow" style="margin-top:6mm">How many m² does US$1&nbsp;M buy?</div>
+  <h3 style="margin-top:3mm;font-weight:300;font-size:18pt">Madrid has appreciated strongly while London adjusted downwards</h3>
+  <table>
+    <thead>
+      <tr><th>City</th><th class="r">2014</th><th class="r">2024</th><th class="r">Change</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="em">Madrid</span></td><td class="r">125 m²</td><td class="r">70 m²</td><td class="r" style="color:var(--oro)">−44%</td></tr>
+      <tr><td>Paris</td><td class="r">51 m²</td><td class="r">42 m²</td><td class="r">−18%</td></tr>
+      <tr><td>London</td><td class="r">23 m²</td><td class="r">34 m²</td><td class="r">+43%</td></tr>
+    </tbody>
+  </table>
+  <p class="caption" style="margin-top:3mm">m² purchasable with US$1&nbsp;M of prime residential property. Source: Knight Frank Research.</p>
+
+  <div class="grid2" style="margin-top:12mm">
+    <div class="databox">
+      <div class="k">67.1%</div>
+      <h3>Foreign investment</h3>
+      <p>Of Spain's gross foreign investment went to Madrid in 2024.</p>
+    </div>
+    <div class="databox">
+      <div class="k">100&nbsp;M</div>
+      <h3>Visitors</h3>
+      <p>Forecast for 2025, in a city that is ever more global both as a destination and as an asset.</p>
+    </div>
+  </div>
+
+  <div class="runfoot"><span>Sophiq Properties</span><span>03 / 06</span></div>
+</div>
+
+<!-- ============================ P4 · COMPRADOR Y GEOGRAFÍA ============================ -->
+<div class="page">
+  <div class="runhead"><span>Madrid Insight 2025/26</span><span>Demand</span></div>
+  <div style="margin-top:14mm">
+    <div class="eyebrow">Where the prime buyer comes from</div>
+    <h2 style="margin-top:4mm">The domestic buyer loses ground to a global market</h2>
+    <p class="section-intro">In 2025 the international buyer accounts for 45% of prime transactions, against 30% in 2018. Latin America leads foreign demand and the US buyer has multiplied since 2018.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="databox"><div class="k">45%</div><h3>International (2025)</h3><p>Of all prime transactions. It was 30% in 2018.</p></div>
+    <div class="databox"><div class="k">26%</div><h3>Latin America</h3><p>The main source of foreign demand in the prime segment.</p></div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="eyebrow">Prime geography</div>
+  <h2 style="margin-top:4mm">Salamanca remains the epicentre of prime Madrid</h2>
+  <p class="section-intro">Five districts inside the M-30 concentrate most of the high-end transactions, plus La Moraleja as the enclave for luxury detached homes.</p>
+  <div class="note">
+    <p><span style="color:var(--nero);font-weight:500">Salamanca range.</span> The average prime price in Salamanca sits between &euro;13,000 and &euro;15,400&nbsp;per m², the ceiling of Madrid's residential market.</p>
+  </div>
+
+  <div class="runfoot"><span>Sophiq Properties</span><span>04 / 06</span></div>
+</div>
+
+<!-- ============================ P5 · CUELLO DE BOTELLA + BRANDED ============================ -->
+<div class="page">
+  <div class="runhead"><span>Madrid Insight 2025/26</span><span>Supply</span></div>
+  <div style="margin-top:14mm">
+    <div class="eyebrow">The bottleneck</div>
+    <h2 style="margin-top:4mm">Limited new supply pushing demand towards refurbished stock</h2>
+  </div>
+  <div class="thesis" style="grid-template-columns:1fr 1fr">
+    <div class="idea"><h3>Limited new build</h3><p>Local regulation and the city's urban character rule out large high-rise developments. That is not expected to change in the short term.</p></div>
+    <div class="idea"><h3>Salamanca &minus;20%</h3><p>New build supply in the most prime district fell by close to 20% comparing 2025 with 2020.</p></div>
+    <div class="idea"><h3>Towards refurbished stock</h3><p>Demand shifts to existing homes refurbished down to the last detail, with amenities and exclusive finishes.</p></div>
+    <div class="idea"><h3>Sustained upward pressure</h3><p>Scarce supply plus growing demand is the equation that underpins the appreciation of prime Madrid.</p></div>
+  </div>
+
+  <div class="spacer"></div>
+  <div class="eyebrow">Branded residences</div>
+  <h2 style="margin-top:4mm">Exclusivity with five-star hotel service</h2>
+  <p class="section-intro">After the Four Seasons milestone, Madrid is consolidating its position at the very top end with Banyan Tree Padilla and SLS Madrid Infantas, and three more projects under construction.</p>
+  <div class="metrics">
+    <div class="metric" style="border-right:0.5px solid var(--linea);padding-right:8mm"><div class="fig">+25&ndash;35<span class="u">%</span></div><div class="lab">Typical premium over non-branded projects.</div></div>
+    <div class="metric" style="padding-left:8mm"><div class="fig"><span class="u">&euro;</span>18,000</div><div class="lab">Average price per m² (up to &euro;25,000 per m² in exceptional cases).</div></div>
+  </div>
+
+  <div class="runfoot"><span>Sophiq Properties</span><span>05 / 06</span></div>
+</div>
+
+<!-- ============================ P6 · LECTURA SOPHIQ (contraportada) ============================ -->
+<div class="page dark">
+  <div class="cover-top">
+    <img class="cover-logo" src="https://grsnmyr.github.io/sophiq-assets/logos/oneline/sophiq-blanco.png" alt="Sophiq">
+    <div class="eyebrow" style="color:var(--oro)">The Sophiq view</div>
+  </div>
+  <div style="margin-top:24mm">
+    <h2 style="color:var(--bianco);max-width:150mm">What this report means if you are buying today</h2>
+    <ul style="margin-top:6mm">
+      <li style="color:rgba(250,250,248,0.85)"><span style="color:#fff">A figure from a respected third party.</span> Prime Madrid is the fastest growing market in Europe. That is not our opinion, it is Knight Frank's.</li>
+      <li style="color:rgba(250,250,248,0.85)"><span style="color:#fff">A structural scarcity of supply</span> that supports the thesis Sophiq is built on.</li>
+      <li style="color:rgba(250,250,248,0.85)"><span style="color:#fff">45% international buyers</span> (Latin America, the US, the UK): the market you would be buying alongside.</li>
+      <li style="color:rgba(250,250,248,0.85)"><span style="color:#fff">Regulatory resilience</span>, the answer to the question every non-resident buyer asks first.</li>
+    </ul>
+  </div>
+
+  <div class="cover-body">
+    <div class="cover-rule"></div>
+    <p class="caption" style="color:rgba(250,250,248,0.6);max-width:150mm">A note on use: Knight Frank measures the prime and ultra-prime segment (Salamanca &euro;13,000&ndash;15,400 per m²), above the mid-market bracket Sophiq buys in. Read it as a thermometer of market confidence, not as a direct price per m² comparable for our own transactions.</p>
+    <p class="cover-meta" style="margin-top:6mm">Sophiq synthesis · Data: Knight Frank, Madrid Insight 2025/26 (IMF, INE, Comunidad de Madrid, Wealth Report 2025). June 2026.</p>
+  </div>
+</div>

@@ -41,3 +41,38 @@ intercambiadas. Se conserva el trazo, el antialias y el brillo originales.
 ## Requisitos
 
 `python3` con `pillow`, `numpy` y `opencv-python`.
+
+## El informe Knight Frank en inglés (3-sep-2026)
+
+`informes/knight-frank-madrid-2026-en.html` es la traducción del castellano,
+con **la misma estructura HTML y el mismo CSS**: un `diff` de solo etiquetas da
+cero diferencias y los dos ficheros tienen 267 líneas. Solo cambia el texto, y
+las cifras pasan a formato inglés (`+5,0%` → `+5.0%`, `13.000–15.400 €/m²` →
+`€13,000–15,400 per m²`, `1 M$` → `US$1 M`, FMI → IMF).
+
+Para re-imprimir el PDF después de tocar el HTML:
+
+```sh
+cd informes
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless --disable-gpu --no-pdf-header-footer \
+  --virtual-time-budget=12000 \
+  --print-to-pdf=knight-frank-madrid-2026-en.pdf \
+  "file://$PWD/knight-frank-madrid-2026-en.html"
+```
+
+Ese comando es el que reproduce el PDF castellano **byte a byte** (180.608 B),
+así que sirve de control de que el pipeline es el mismo. Salen 6 páginas A4.
+
+**Revisar siempre las 6 páginas rasterizadas antes de dar el PDF por bueno:**
+`.page` lleva `overflow:hidden`, y el inglés suele ocupar más que el castellano,
+así que un texto que se pase **se recorta sin avisar**. Verificado página a
+página en esta versión.
+
+**Un cambio que NO es traducción, en la página 6.** Dos de los cuatro bullets de
+«Lectura Sophiq» estaban escritos para dentro (*"alineado con nuestro público"*,
+*"útil para neutralizar objeciones de inversores no residentes"*) y ese PDF lo
+recibe el lead. En inglés se han reescrito mirando al comprador: *"the market
+you would be buying alongside"* y *"the answer to the question every
+non-resident buyer asks first"*. Los datos son los mismos. Si se prefiere
+paridad literal con el castellano, se revierte en dos líneas.
