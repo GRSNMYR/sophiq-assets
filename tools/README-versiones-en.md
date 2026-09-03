@@ -69,10 +69,25 @@ así que sirve de control de que el pipeline es el mismo. Salen 6 páginas A4.
 así que un texto que se pase **se recorta sin avisar**. Verificado página a
 página en esta versión.
 
-**Un cambio que NO es traducción, en la página 6.** Dos de los cuatro bullets de
-«Lectura Sophiq» estaban escritos para dentro (*"alineado con nuestro público"*,
-*"útil para neutralizar objeciones de inversores no residentes"*) y ese PDF lo
-recibe el lead. En inglés se han reescrito mirando al comprador: *"the market
-you would be buying alongside"* y *"the answer to the question every
-non-resident buyer asks first"*. Los datos son los mismos. Si se prefiere
-paridad literal con el castellano, se revierte en dos líneas.
+**Un cambio de copy en la página 6, aplicado a los DOS idiomas.** Dos de los
+cuatro bullets de «Lectura Sophiq» estaban escritos para dentro, como notas para
+el comercial, y ese PDF lo recibe el lead: decían *"alineado con nuestro
+público"* y *"útil para neutralizar objeciones de inversores no residentes"*.
+O sea que el lead leía que él es «nuestro público» y que ese dato sirve para
+neutralizar sus objeciones.
+
+Reescritos mirando al comprador, con los mismos datos:
+
+| | Antes | Ahora |
+| --- | --- | --- |
+| ES | alineado con nuestro público | el mercado en el que estarías comprando |
+| ES | útil para neutralizar objeciones de inversores no residentes | la respuesta a la primera pregunta que hace todo comprador no residente |
+| EN | *(traducción literal de las de arriba)* | the market you would be buying alongside · the answer to the question every non-resident buyer asks first |
+
+El castellano se corrigió el 3-sep-2026 y su PDF se re-imprimió con el mismo
+comando de arriba, así que el fichero cambia de tamaño respecto al de junio.
+
+**Queda una asimetría a propósito:** el titular de esa página sigue siendo *"Qué
+significa este informe para quien invierte hoy"* en castellano y *"What this
+report means if you are buying today"* en inglés. Merece una decisión aparte,
+porque el cliente de Lienzos compra para vivir, no invierte.
