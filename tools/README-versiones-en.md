@@ -87,7 +87,28 @@ Reescritos mirando al comprador, con los mismos datos:
 El castellano se corrigió el 3-sep-2026 y su PDF se re-imprimió con el mismo
 comando de arriba, así que el fichero cambia de tamaño respecto al de junio.
 
-**Queda una asimetría a propósito:** el titular de esa página sigue siendo *"Qué
-significa este informe para quien invierte hoy"* en castellano y *"What this
-report means if you are buying today"* en inglés. Merece una decisión aparte,
-porque el cliente de Lienzos compra para vivir, no invierte.
+**El titular de esa página también se cambió** (3-sep-2026), de *"para quien
+invierte hoy"* a *"para quien compra hoy"*, alineado con el inglés (*"if you are
+buying today"*).
+
+El motivo está en el canon, no en criterio propio: **Brand Voice & Tono**
+(`Wiki › Marketing › Brand › Design System › 01 · Principios y voz visual ›
+Brand Voice & Tono`) asigna el tono **por audiencia**, y el registro de
+*inversión* es el de **Capital Partners** («Sofisticado, data-driven · *Su
+inversión en Serrano 84 presenta un avance del 45%*»), no el de **Leads**
+(«Aspiracional, informativo»). Este PDF lo recibe un lead desde el Email 3 de
+Lienzos, así que llamarle inversor le presta el registro de otra audiencia. Y
+«compra» cubre igual al que compra para vivir y al que compra como inversión.
+
+Ese mismo doc es el que respalda el arreglo de los dos bullets: los principios
+para todas las audiencias son **elegancia, confianza** (datos, transparencia,
+certidumbre) y **cercanía** (exclusivos pero accesibles). Una nota interna sobre
+cómo neutralizar las objeciones del que lee no es ni transparencia ni cercanía.
+
+**Pendiente de decisión, y afecta a más piezas que esta:** la regla 9 del Design
+System dice que los símbolos RAE van **siempre separados** (`120 €`, `8,4 %`,
+`120 m²`, con espacio fino). El castellano lo cumple. El inglés, no: sigue la
+convención inglesa y escribe `€13,000`, `+5.0%`, `€10,000–12,000/m²` pegados,
+tanto en este informe como en los cinco emails ingleses de Lienzos. La regla no
+dice qué hacer fuera del castellano. Hay que decidirlo una vez y aplicarlo a
+todo el inglés, no pieza a pieza.
